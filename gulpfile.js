@@ -1,60 +1,65 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass')(require('sass'));
-var include_file = require('gulp-file-include');
-var browserSync = require('browser-sync');
-var uglify = require('gulp-uglify');
-var runSequence = require('run-sequence');
+const { src, dest, watch, series, parallel } = require('gulp');
+const sass            = require('gulp-sass')(require('sass'));
+const fileinclude     = require('gulp-file-include');
+const browserSync     = require('browser-sync').create();
+const uglify          = require('gulp-uglify');
+const concat          = require('gulp-concat');
 
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-});
-
-function browserSyncInit() {
-    browserSync.init({
-        server: './build'
-    })
-
-    gulp.watch('./build/*.html').on('change', browserSync.reload);
-    gulp.watch('./build/css/*.css').on('change', browserSync.reload);
-}
-
-function html(cb) {
-    return gulp.src('./src/*.html')
-        .pipe(include_file({
-            prefix: "@@",
-            basepath: "@file"
+// 1. HTML: інклудим partials → build/index.html
+function html() {
+    return src('src/index.html')
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
         }))
-        .pipe(gulp.dest('build'))
-    ;
+        .pipe(dest('build'))
+        .pipe(browserSync.stream());
 }
 
-function js(cb) {
-    gulp.task('js', function () {
-        return gulp.src('/js/*.js')
-            .pipe(uglify())
-            .pipe(concat('app.js'))
-            .pipe(gulp.dest('build/js'));
+// 2. SCSS → CSS: збираємо всі partials у один styles.css
+function styles() {
+    return src('src/scss/styles.scss')
+        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+        .pipe(dest('build/css'))
+        .pipe(browserSync.stream());
+}
+
+// 3. JS: конкатенуємо (якщо буде більше файлів) і мінімізуємо
+function scripts() {
+    return src('src/js/**/*.js')
+        .pipe(concat('accordion.js'))
+        .pipe(uglify())
+        .pipe(dest('build/js'))
+        .pipe(browserSync.stream());
+}
+
+// 4. Картинки: копіюємо все зображення в build/images
+function images() {
+    return src('src/images/**/*')
+        .pipe(dest('build/images'))
+        .pipe(browserSync.stream());
+}
+
+// 5. Сервер + Watch
+function serve() {
+    browserSync.init({
+        server: 'build',
+        notify: false
     });
+
+    watch('src/index.html', html);
+    watch('src/partials/**/*.html', html);
+    watch('src/scss/**/*.scss', styles);
+    watch('src/js/**/*.js', scripts);
+    watch('src/images/**/*', images);
 }
 
-function css(cb) {
-    return gulp.src('src/scss/**/*.scss') // Gets all files ending with .scss in src/scss and children dirs
-        .pipe(sass().on('error', sass.logError)) // Passes it through a gulp-sass, log errors to console
-        .pipe(gulp.dest('build/css')) // Outputs it in the css folder
-    ;
+exports.default = series(
+    parallel(html, styles, scripts, images),
+    serve
+);
+function css() {
+    return gulp.src('src/scss/styles.scss') // ⚠️ тільки головний файл!
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('build/css'));
 }
-
-exports.default = function() {
-    // You can use a single task
-    gulp.watch('src/scss/**/*.scss', css);
-    gulp.watch('src/**/*.html', html);
-
-    browserSyncInit();
-};
-
-
-

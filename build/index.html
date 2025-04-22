@@ -6,23 +6,273 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/styles.css"/>
+
 </head>
 <body>
-<link rel="stylesheet" href="/css/styles.css">
+<header class="hero">
+    <div class="hero__overlay">
+        <div class="container hero__top">
+
+            <div class="hero__left">
+                <div class="logo">LOGO</div>
+                <div class="hero__lang">
+                    <span>En</span>
+                    <img src="../images/Vector.png" alt="theme toggle" class="theme-toggle" />
+                </div>
+            </div>
+            <nav class="hero__nav">
+                <a href="#">Contact Us</a>
+                <a href="#">Frequently asked questions</a>
+                <a href="#">Benefits</a>
+                <a href="#">Home</a>
+            </nav>
+        </div>
 
 
-    <header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/cart">Cart</a></li>
-        </ul>
-    </nav>
+        <div class="container hero__content">
+            <h1>Communicate with your customers with just a click</h1>
+            <p>
+                We provide an integrated experience to communicate with your customers directly<br>
+                And at no cost from anywhere without the need to buy a number in each country
+            </p>
+            <a href="#" class="btn btn--primary">Talk To An Expert</a>
+        </div>
+
+        <!-- call-icon внизу -->
+        <div class="hero__call">
+            <img src="../images/Component77.png" alt="call icon" />
+        </div>
+    </div>
 </header>
+
+
+<section class="benefits">
+    <div class="container">
+        <h2>Benefits</h2>
+        <p class="benefits__subtitle">You will get many features that help you...</p>
+
+        <div class="benefits__content">
+            <div class="benefits__grid">
+
+                <div class="benefits__card">
+                    <img src="../images/save-money 1.png" alt="Save costs icon" />
+                    <h3>Save costs</h3>
+                    <p>Save the cost of handling calls and providing free service to your customers</p>
+                </div>
+
+                <div class="benefits__card">
+                    <img src="../images/improve 1.png" alt="Customer experience icon" />
+                    <h3>Improve the <br /> customer experience</h3>
+                    <p>Simplify the process for your customers by removing the need to switch between devices and applications</p>
+                </div>
+
+                <div class="benefits__card">
+                    <img src="../images/integration 2.png" alt="Self-integration icon" />
+                    <h3>Self-integration</h3>
+                    <p>Khalna Basalasso integrates with your systems in minutes</p>
+                </div>
+            </div>
+
+            <div class="benefits__video">
+                <div class="video-placeholder">
+                    <img src="../images/play-button.png" alt="Play video" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing">
+    <div class="container">
+        <h2 class="pricing__title">Plans and Pricing</h2>
+        <p class="pricing__subtitle">
+            Increase feature adoption and customer satisfaction with the right bucket plan.
+        </p>
+
+        <div class="pricing__toggle">
+            <span>Monthly</span>
+            <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+            </label>
+            <span class="secondary">Secondary</span>
+        </div>
+        <p class="pricing__note">Save 25% on annual plan</p>
+
+        <div class="pricing__plans">
+            <!-- Plan 1 -->
+            <div class="pricing__card">
+                <h3>Business</h3>
+                <p class="desc">For organizations with customized needs.</p>
+                <div class="price">100 SAR <span>Monthly</span></div>
+                <a href="#" class="btn btn--outline">Book a Demo</a>
+                <ul class="features">
+                    <li>1000 minutes</li>
+                    <li>5 calls made at the same time</li>
+                </ul>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="pricing__card highlighted">
+                <div class="badge">Most Used</div>
+                <h3>Business</h3>
+                <p class="desc">Best choice for organizations with a larger end-user volume.</p>
+                <div class="price">300 SAR <span>Monthly</span></div>
+                <a href="#" class="btn btn--primary">Book a Demo</a>
+                <ul class="features">
+                    <li>2000 minutes</li>
+                    <li>15 calls made at the same time</li>
+                </ul>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="pricing__card">
+                <h3>Professional</h3>
+                <p class="desc">Best choice for organizations with multiple product teams.</p>
+                <div class="price">100 SAR <span>Monthly</span></div>
+                <a href="#" class="btn btn--outline">Book a Demo</a>
+                <ul class="features">
+                    <li>Maximum 10,000 minutes</li>
+                    <li>No limit</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <h2 class="faq__title">Frequently asked questions</h2>
+
+    <div class="faq__list">
+        <!-- 1 -->
+        <div class="faq__item">
+            <button class="faq__question" type="button">
+                <span>How can I get technical support for Product Name?</span>
+                <img class="faq__icon" src="images/icon-down.png" alt="">
+            </button>
+            <div class="faq__answer">
+                <p>
+                    You can open a support ticket in our Help Center at
+                    <a href="https://support.example.com">support.example.com</a>,
+                    or email us at <strong>support@example.com</strong>.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="faq__item">
+            <button class="faq__question" type="button">
+                <span>What is the typical response time for a support request?</span>
+                <img class="faq__icon" src="images/icon-down.png" alt="">
+            </button>
+            <div class="faq__answer">
+                <p>
+                    We aim to respond within 24 hours on business days.
+                    Over weekends, response time may be extended up to 48 hours.
+                </p>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="faq__item">
+            <button class="faq__question" type="button">
+                <span>Do you offer phone support?</span>
+                <img class="faq__icon" src="images/icon-down.png" alt="">
+            </button>
+            <div class="faq__answer">
+                <p>
+                    Yes, you can call us at
+                    <a href="tel:+123456789">+1 234 567 89</a>,
+                    from 9:00 AM to 6:00 PM PST.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="faq__item">
+            <button class="faq__question" type="button">
+                <span>Where can I find the product documentation?</span>
+                <img class="faq__icon" src="images/icon-down.png" alt="">
+            </button>
+            <div class="faq__answer">
+                <p>
+                    All documentation is available at:
+                    <a href="https://docs.example.com">docs.example.com</a>.
+                </p>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="faq__item">
+            <button class="faq__question" type="button">
+                <span>Is support available on weekends?</span>
+                <img class="faq__icon" src="images/icon-down.png" alt="">
+            </button>
+            <div class="faq__answer">
+                <p>
+                    Weekend support is available for critical issues only.
+                    Please use our Help Center for more details.
+                </p>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="faq__item">
+            <button class="faq__question" type="button">
+                <span>Can I track the status of my support request?</span>
+                <img class="faq__icon" src="images/icon-down.png" alt="">
+            </button>
+            <div class="faq__answer">
+                <p>
+                    Yes! Once logged in, visit the "My Tickets" section to see the status and updates.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq__footer">
+        <p>
+            <strong>There are still questions ?</strong><br>
+            Feel free to contact us
+        </p>
+        <a class="faq__btn" href="/contact">Contact us</a>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="contact__container">
+        <form class="contact__form">
+            <div class="contact__row">
+                <input type="text" placeholder="Name" class="contact__input">
+                <input type="tel" placeholder="Mobile" class="contact__input">
+            </div>
+            <input type="email" placeholder="Email" class="contact__input full">
+            <textarea placeholder="Message (optional)" class="contact__textarea"></textarea>
+            <button type="submit" class="contact__btn">Send</button>
+        </form>
+
+        <div class="contact__info">
+            <h2>Contact <span>us</span></h2>
+            <p>Younisx10@gmail.com<br>+20101182399</p>
+            <div class="contact__socials">
+                <a class="contact__social" href="#">
+                    <img src="../images/icon-linkedin.png" alt="LinkedIn">
+                </a>
+                <a class="contact__social" href="#">
+                    <img src="../images/icon-behance.png" alt="Behance">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="css/styles.css">
+
+
+<script src="js/accordion.js"></script>
+<script src="js/theme.js"></script>
+
 </body>
 </html>
