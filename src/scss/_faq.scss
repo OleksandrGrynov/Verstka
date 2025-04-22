@@ -1,0 +1,116 @@
+.faq {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+    ont-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    border-top: 1px solid #e5e7eb;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &.is-open {
+      .faq__question {
+        background-color: #f9fafb;
+      }
+
+      .faq__answer {
+        max-height: 500px;
+        padding: 1rem 1.5rem 1.5rem;
+      }
+
+      .faq__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    .faq__icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 1.5rem;
+
+    p {
+      margin: 0;
+      line-height: 1.6;
+      color: #555;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 2.5rem;
+
+    p {
+      margin-bottom: 1rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .faq__btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken(#2563eb, 5%);
+      }
+    }
+  }
+}
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 1.5rem;
+}
+
+.faq__item.is-open .faq__answer {
+  max-height: 500px;
+  padding: 1rem 1.5rem 1.5rem;
+}
