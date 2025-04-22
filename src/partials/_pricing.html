@@ -1,30 +1,57 @@
 <section class="pricing">
     <div class="container">
         <h2 class="pricing__title">Plans and Pricing</h2>
+        <p class="pricing__subtitle">
+            Increase feature adoption and customer satisfaction with the right bucket plan.
+        </p>
 
         <div class="pricing__toggle">
-            <label>
-                <input type="radio" name="billing" checked />
-                Monthly
+            <span>Monthly</span>
+            <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
             </label>
-            <label>
-                <input type="radio" name="billing" />
-                Annual
-            </label>
-            <span class="pricing__note">Save 25% on annual plan</span>
+            <span class="secondary">Secondary</span>
         </div>
+        <p class="pricing__note">Save 25% on annual plan</p>
 
         <div class="pricing__plans">
+            <!-- Plan 1 -->
             <div class="pricing__card">
                 <h3>Business</h3>
-                <span class="pricing__tag">Most Used</span>
-                <p class="pricing__desc">
-                    All you need to grow your business with built-in integrations and tools.
-                </p>
-                <a href="#" class="btn btn--primary">Choose Plan</a>
+                <p class="desc">For organizations with customized needs.</p>
+                <div class="price">100 SAR <span>Monthly</span></div>
+                <a href="#" class="btn btn--outline">Book a Demo</a>
+                <ul class="features">
+                    <li>1000 minutes</li>
+                    <li>5 calls made at the same time</li>
+                </ul>
             </div>
 
-            <!-- Додай інші плани при потребі -->
+            <!-- Plan 2 -->
+            <div class="pricing__card highlighted">
+                <div class="badge">Most Used</div>
+                <h3>Business</h3>
+                <p class="desc">Best choice for organizations with a larger end-user volume.</p>
+                <div class="price">300 SAR <span>Monthly</span></div>
+                <a href="#" class="btn btn--primary">Book a Demo</a>
+                <ul class="features">
+                    <li>2000 minutes</li>
+                    <li>15 calls made at the same time</li>
+                </ul>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="pricing__card">
+                <h3>Professional</h3>
+                <p class="desc">Best choice for organizations with multiple product teams.</p>
+                <div class="price">100 SAR <span>Monthly</span></div>
+                <a href="#" class="btn btn--outline">Book a Demo</a>
+                <ul class="features">
+                    <li>Maximum 10,000 minutes</li>
+                    <li>No limit</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
