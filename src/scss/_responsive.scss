@@ -352,3 +352,69 @@
     }
   }
 }
+body.dark {
+  .faq__item {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #eee;
+
+    &.active {
+      background-color: #333;
+    }
+
+    .faq__answer {
+      background-color: #2e2e2e;
+      color: #ccc;
+    }
+
+    .faq__toggle img {
+      filter: brightness(0) invert(1); // для іконок в темі
+    }
+  }
+
+  .btn--primary {
+    background-color: #0b5ed7;
+    color: white;
+
+    &:hover {
+      background-color: #094bb7;
+    }
+  }
+}
+body.dark .faq__toggle {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+
+  span {
+    color: #fff;
+  }
+}
+body.dark h2,
+body.dark .faq__title {
+  color: #fff;
+}
+body.dark a {
+  color: #66b3ff;
+}
+
+body.dark a:hover {
+  color: #8acbff;
+  text-decoration: underline;
+}
+body.dark input,
+body.dark textarea {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+}
+body.dark {
+  color: #ddd;
+  background-color: #121212;
+
+  h1, h2, h3, h4, h5 {
+    color: #fff;
+  }
+}
+html, body {
+  overflow-x: hidden;
+}
